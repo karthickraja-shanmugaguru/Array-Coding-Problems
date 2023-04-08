@@ -9,5 +9,19 @@
 // Explanation: The numbers 1 , 3 and 6 appears more
 // than once in the array.
 public class array4 {
-    
+      public static void findDuplicates(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            int index = Math.abs(arr[i]);
+            if (arr[index] < 0) {
+                System.out.print(index + " ");
+            } else {
+                arr[index] = -arr[index];
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 6, 3, 6, 1};
+        findDuplicates(arr);
+    }
 }
